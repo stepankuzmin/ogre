@@ -22,6 +22,15 @@ if (args.pid) {
 
 var app = express()
 
+// Set headers
+app.use(function (request, response, next) {
+  response.header('Access-Control-Allow-Origin', '*')
+  response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  console.log('%s: %s',  new Date().toISOString(), request.url)
+  next()
+})
+
+// ogr2ogr handler
 app.get('/', function (request, response, next) {
   var input       = request.query.input,
       output      = request.query.output,
@@ -34,7 +43,6 @@ app.get('/', function (request, response, next) {
   }
 
   try {
-    console.log('%s: %s -> %s',  new Date().toISOString(), input, output)
 
     ogr2ogr(input).project(projection)
                   .format(format)
