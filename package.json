@@ -1,0 +1,33 @@
+{
+  "name": "ogre",
+  "version": "0.0.1",
+  "description": "ogr2ogr as a service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "production": "node index.js --pid ogre.pid --socket ogre.socket"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stepankuzmin/ogre.git"
+  },
+  "keywords": [
+    "ogr2ogr",
+    "gdal",
+    "rest",
+    "api"
+  ],
+  "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (http://stepankuzmin.ru/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stepankuzmin/ogre/issues"
+  },
+  "homepage": "https://github.com/stepankuzmin/ogre",
+  "dependencies": {
+    "express": "^4.13.3",
+    "minimist": "^1.2.0",
+    "npid": "^0.4.0",
+    "ogr2ogr": "^0.5.1"
+  }
+}
