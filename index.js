@@ -37,13 +37,12 @@ app.get('/', function (request, response, next) {
       format      = (request.query.format || 'GeoJSON'),
       projection  = (request.query.projection || 'EPSG:4326')
 
-  if (!input) {
+  if (!fs.existsSync(input)) {
     response.status(400).json({ error: 'nothing to eat' })
     return
   }
 
   try {
-
     ogr2ogr(input).project(projection)
                   .format(format)
                   .skipfailures()
