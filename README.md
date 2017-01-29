@@ -1,5 +1,7 @@
 # Ogre
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/stepankuzmin/ogre.svg)](https://greenkeeper.io/)
+
 Ogre is a `GDAL`'s helper `ogr2ogr` as a service.
 
 ## Installation
